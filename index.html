@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Delícias Pequeninas — Doces artesanais para eventos</title>
+<meta name="description" content="Mesas de doces, mini sobremesas e catering artesanal para casamentos, batizados, aniversários e eventos corporativos. Lisboa · Cascais." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f3e9d2;           /* brand cream */
+    --bg-soft: #eadfc4;
+    --paper: #faf4e6;        /* warm off-white */
+    --ink: #1f4547;          /* brand deep teal */
+    --ink-2: #3a6063;
+    --muted: #8a8778;
+    --line: #e2d6bd;
+    --accent: #2f5a5e;       /* brand teal */
+    --accent-2: #4a7c7f;
+    --olive: #6b7a5a;
+    --gold: #b08a4a;
+    --radius-sm: 10px;
+    --radius: 18px;
+    --radius-lg: 28px;
+    --shadow-sm: 0 1px 2px rgba(31,69,71,.04), 0 4px 12px rgba(31,69,71,.06);
+    --shadow: 0 8px 32px rgba(31,69,71,.1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    font-feature-settings: "ss01", "ss02";
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Fraunces', 'Cormorant Garamond', serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    color: var(--ink);
+  }
+  h1 { font-size: clamp(2.8rem, 7vw, 5.6rem); font-weight: 400; }
+  h2 { font-size: clamp(2rem, 4.2vw, 3.5rem); font-weight: 400; }
+  h3 { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.3; }
+
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: .75rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .script {
+    font-family: 'Dancing Script', cursive;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  @media (min-width: 900px) {
+    .container { padding: 0 2.5rem; }
+  }
+
+  /* ---------- NAV ---------- */
+  nav.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(247, 243, 236, 0.8);
+    backdrop-filter: saturate(140%) blur(14px);
+    -webkit-backdrop-filter: saturate(140%) blur(14px);
+    border-bottom: 1px solid rgba(26,23,20,.06);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+  @media (min-width: 900px) { .nav-inner { padding: 1.1rem 2.5rem; } }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .brand-mark {
+    width: 48px; height: 48px;
+    flex-shrink: 0;
+  }
+  .brand-mark svg { width: 100%; height: 100%; display: block; }
+  .brand-name {
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .brand-sub {
+    font-size: .72rem;
+    color: var(--muted);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-top: 1px;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .nav-links a {
+    color: var(--ink-2);
+    text-decoration: none;
+    font-size: .9rem;
+    font-weight: 400;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  .lang-toggle {
+    display: inline-flex;
+    background: rgba(26,23,20,.05);
+    border-radius: 999px;
+    padding: 3px;
+    font-size: .72rem;
+  }
+  .lang-toggle button {
+    background: transparent;
+    border: 0;
+    padding: .35rem .75rem;
+    border-radius: 999px;
+    cursor: pointer;
+    color: var(--muted);
+    font-family: inherit;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    transition: all .2s;
+  }
+  .lang-toggle button.active {
+    background: var(--ink);
+    color: var(--bg);
+  }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    background: var(--ink);
+    color: var(--bg);
+    padding: .7rem 1.35rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-family: 'Fraunces', serif;
+    font-size: .95rem;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -0.005em;
+    transition: background .2s, transform .15s;
+  }
+  .nav-cta:hover { background: var(--accent); transform: translateY(-1px); }
+
+  .nav-toggle {
+    display: none;
+    background: transparent;
+    border: 0;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: var(--ink);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    padding: 4rem 0 5rem;
+    position: relative;
+  }
+  .hero .container {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    padding: .4rem .85rem;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: .75rem;
+    font-weight: 500;
+    color: var(--ink-2);
+    margin-bottom: 2rem;
+  }
+  .hero-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--olive); }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+  }
+  .hero h1 .hand {
+    font-family: 'Dancing Script', cursive;
+    font-style: normal;
+    font-size: .85em;
+    color: var(--accent);
+    font-weight: 500;
+    display: inline-block;
+    transform: translateY(-6px) rotate(-2deg);
+  }
+
+  .hero .lead {
+    margin-top: 1.75rem;
+    color: var(--ink-2);
+    font-size: 1.08rem;
+    max-width: 520px;
+  }
+
+  .cta-row { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .9rem 1.5rem;
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+    font-size: .95rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform .15s, background .2s, border-color .2s, color .2s;
+  }
+  .btn:hover { transform: translateY(-1px); }
+
+  .btn-primary {
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .btn-primary:hover { background: var(--accent); }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+  .btn-ghost:hover { background: var(--ink); color: var(--bg); }
+
+  .btn-whatsapp {
+    background: #25D366;
+    color: white;
+  }
+  .btn-whatsapp:hover { background: #1fb856; }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    font-size: .85rem;
+    color: var(--muted);
+  }
+  .hero-meta strong { color: var(--ink); font-weight: 500; }
+
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background-image: url('https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=1200&q=85');
+    background-size: cover;
+    background-position: center;
+    box-shadow: var(--shadow);
+  }
+  .hero-visual::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(26,23,20,.25));
+  }
+  .hero-logo {
+    position: absolute;
+    bottom: -40px;
+    left: -40px;
+    width: 170px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--bg);
+    padding: 10px;
+    box-shadow: var(--shadow);
+    z-index: 2;
+    transform: rotate(-6deg);
+  }
+  .hero-logo svg { width: 100%; height: 100%; }
+  .hero-badge {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: var(--paper);
+    padding: .55rem 1rem;
+    border-radius: 999px;
+    font-size: .75rem;
+    font-weight: 500;
+    color: var(--ink);
+    box-shadow: var(--shadow-sm);
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+  }
+  .hero-badge svg { width: 14px; height: 14px; color: var(--accent); }
+
+  /* ---------- MARQUEE ---------- */
+  .marquee {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 1.1rem 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .marquee-track {
+    display: flex;
+    gap: 3rem;
+    white-space: nowrap;
+    animation: scroll 30s linear infinite;
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: 400;
+  }
+  .marquee-track span { display: inline-flex; align-items: center; gap: 3rem; }
+  .marquee-track .dot { color: var(--accent); }
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section { padding: 6rem 0; }
+  section.alt { background: var(--bg-soft); }
+
+  .section-head {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    max-width: 640px;
+    margin-bottom: 4rem;
+  }
+  .section-head.center { margin-left: auto; margin-right: auto; align-items: center; text-align: center; }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .about-photo {
+    aspect-ratio: 4 / 5;
+    border-radius: var(--radius-lg);
+    background-image: url('https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=900&q=85');
+    background-size: cover;
+    background-position: center;
+    box-shadow: var(--shadow);
+  }
+  .about-text h2 { margin: .75rem 0 1.5rem; }
+  .about-text p { color: var(--ink-2); font-size: 1.05rem; margin-bottom: 1rem; }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+  }
+  .stat .num {
+    font-family: 'Fraunces', serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .stat .label {
+    font-size: .85rem;
+    color: var(--muted);
+    margin-top: .35rem;
+  }
+
+  /* ---------- SERVICES ---------- */
+  .services-head {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+    margin-bottom: 3.5rem;
+  }
+  .services-head p { color: var(--ink-2); font-size: 1.05rem; max-width: 460px; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .service {
+    background: var(--paper);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--line);
+    transition: transform .25s, box-shadow .25s;
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    min-height: 230px;
+  }
+  .service:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+  .service-num {
+    font-family: 'Fraunces', serif;
+    font-size: .8rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+  .service h3 { margin-top: .5rem; }
+  .service p { color: var(--ink-2); font-size: .95rem; }
+  .service-arrow {
+    margin-top: auto;
+    color: var(--accent);
+    font-size: 1.2rem;
+    transition: transform .2s;
+  }
+  .service:hover .service-arrow { transform: translateX(4px); }
+
+  /* ---------- GALLERY ---------- */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+  }
+  .gallery-item {
+    border-radius: var(--radius);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    transition: transform .4s;
+    min-height: 220px;
+  }
+  .gallery-item:hover { transform: scale(1.015); }
+  .gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(26,23,20,.35));
+    opacity: 0;
+    transition: opacity .3s;
+  }
+  .gallery-item:hover::after { opacity: 1; }
+  .g1 { grid-column: span 5; grid-row: span 2; min-height: 460px; }
+  .g2 { grid-column: span 4; }
+  .g3 { grid-column: span 3; }
+  .g4 { grid-column: span 4; }
+  .g5 { grid-column: span 3; }
+  .g6 { grid-column: span 4; }
+  .g7 { grid-column: span 4; }
+  .g8 { grid-column: span 4; }
+
+  .ig-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    margin-top: 3rem;
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: .95rem;
+    transition: gap .2s;
+  }
+  .ig-link:hover { gap: .8rem; color: var(--accent); }
+  .ig-link svg { width: 18px; height: 18px; }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .quote {
+    background: var(--paper);
+    padding: 2.25rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .stars { color: var(--gold); font-size: 1rem; letter-spacing: 2px; }
+  .quote p {
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem;
+    color: var(--ink);
+    line-height: 1.5;
+    font-weight: 400;
+  }
+  .quote footer {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    font-size: .9rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .quote .event { color: var(--muted); font-size: .8rem; font-weight: 400; margin-top: 2px; }
+
+  /* ---------- CTA BANNER ---------- */
+  .cta-banner {
+    background: var(--ink);
+    color: var(--bg);
+    border-radius: var(--radius-lg);
+    padding: 4.5rem 3.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-banner h2 { color: var(--bg); }
+  .cta-banner h2 em { color: var(--bg); font-style: italic; font-family: 'Dancing Script', cursive; font-weight: 600; }
+  .cta-banner p { color: rgba(247, 243, 236, 0.7); max-width: 540px; margin: 1.5rem auto 2rem; }
+  .cta-banner .cta-row { justify-content: center; }
+  .cta-banner .btn-ghost {
+    color: var(--bg);
+    border-color: rgba(247, 243, 236, 0.3);
+  }
+  .cta-banner .btn-ghost:hover {
+    background: var(--bg);
+    color: var(--ink);
+    border-color: var(--bg);
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .contact-info h2 { margin: .75rem 0 2rem; }
+  .contact-info .info-block { padding: 1.25rem 0; border-bottom: 1px solid var(--line); }
+  .contact-info .info-block:first-of-type { border-top: 1px solid var(--line); }
+  .contact-info .info-label {
+    font-size: .72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: .35rem;
+  }
+  .contact-info a { color: var(--ink); text-decoration: none; font-size: 1.05rem; font-weight: 500; }
+  .contact-info a:hover { color: var(--accent); }
+  .contact-info .info-block span { color: var(--ink); font-size: 1.05rem; font-weight: 500; }
+
+  .contact-form {
+    background: var(--paper);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--line);
+  }
+  .form-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: .25rem;
+  }
+  .form-sub { color: var(--muted); font-size: .9rem; margin-bottom: 2rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { margin-bottom: 1.1rem; }
+  .form-group label {
+    display: block;
+    font-size: .78rem;
+    font-weight: 500;
+    color: var(--muted);
+    margin-bottom: .4rem;
+    letter-spacing: 0.04em;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: .85rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    font-family: 'Inter', sans-serif;
+    font-size: .95rem;
+    background: var(--bg);
+    color: var(--ink);
+    transition: border-color .2s, background .2s;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--ink);
+    background: var(--paper);
+  }
+  .form-group textarea { resize: vertical; min-height: 110px; font-family: inherit; }
+
+  .form-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.25rem 0;
+    color: var(--muted);
+    font-size: .8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .form-divider::before, .form-divider::after {
+    content: ''; flex: 1; height: 1px; background: var(--line);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer.site-footer {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 4.5rem 0 2rem;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(247,243,236,0.1);
+  }
+  .footer-brand .brand-mark { background: var(--bg); color: var(--ink); }
+  .footer-brand .brand-name { color: var(--bg); }
+  .footer-brand .brand-sub { color: rgba(247,243,236,0.5); }
+  .footer-brand p {
+    margin-top: 1.5rem;
+    color: rgba(247,243,236,0.6);
+    font-size: .9rem;
+    max-width: 280px;
+  }
+  .footer-col h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: .75rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(247,243,236,0.5);
+    margin-bottom: 1rem;
+  }
+  .footer-col a {
+    display: block;
+    color: rgba(247,243,236,0.85);
+    text-decoration: none;
+    font-size: .95rem;
+    margin-bottom: .6rem;
+    transition: color .2s;
+  }
+  .footer-col a:hover { color: var(--accent); }
+
+  .copyright {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: .82rem;
+    color: rgba(247,243,236,0.5);
+  }
+
+  /* ---------- FLOATING WHATSAPP ---------- */
+  .fab-whatsapp {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25D366;
+    color: white;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 12px 32px rgba(37, 211, 102, 0.4);
+    text-decoration: none;
+    z-index: 100;
+    transition: transform .2s;
+  }
+  .fab-whatsapp:hover { transform: scale(1.08); }
+  .fab-whatsapp svg { width: 28px; height: 28px; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 900px) {
+    .nav-links .desktop-only { display: none; }
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      background: var(--paper);
+      padding: 1.5rem;
+      gap: 1.25rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-links.open { display: flex; }
+    .nav-toggle { display: block; }
+    .hero .container, .about-grid, .contact-grid, .services-head { grid-template-columns: 1fr; gap: 2.5rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: repeat(6, 1fr); }
+    .g1 { grid-column: span 6; min-height: 320px; }
+    .g2, .g4, .g6, .g7, .g8 { grid-column: span 3; }
+    .g3, .g5 { grid-column: span 3; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .form-row { grid-template-columns: 1fr; }
+    section { padding: 4rem 0; }
+    .cta-banner { padding: 3rem 1.5rem; }
+    .hero-logo { width: 120px; bottom: -20px; left: -20px; padding: 6px; }
+  }
+  @media (max-width: 560px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .about-stats { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .stat .num { font-size: 1.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ---------- NAV ---------- -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <div class="brand-mark">
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="60" cy="60" r="58" fill="#f3e9d2" stroke="#2f5a5e" stroke-width="2.2"/>
+          <text x="60" y="58" text-anchor="middle" font-family="Dancing Script, cursive" font-size="34" font-weight="700" fill="#2f5a5e" font-style="italic">Delicias</text>
+          <text x="60" y="79" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#2f5a5e" letter-spacing="2">PEQUENINAS</text>
+          <g transform="translate(60 94)" fill="#2f5a5e">
+            <path d="M -10 -4 q 0 -3 2 -3 q 2 0 2 3 v 8 q 0 1 -1 1 q -1 0 -1 -1 v -3 q -1 0 -2 -1 q -1 -1 0 -4 z" transform="rotate(-20)"/>
+            <path d="M 10 -4 q 0 -3 -2 -3 q -2 0 -2 3 v 8 q 0 1 1 1 q 1 0 1 -1 v -3 q 1 0 2 -1 q 1 -1 0 -4 z" transform="rotate(20)"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-name">Delícias Pequeninas</div>
+        <div class="brand-sub" data-i18n="brandSub">catering artesanal</div>
+      </div>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" id="navToggle">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about" data-i18n="navAbout">Sobre</a>
+      <a href="#services" data-i18n="navServices">Serviços</a>
+      <a href="#gallery" data-i18n="navGallery">Galeria</a>
+      <a href="#testimonials" data-i18n="navTestimonials">Testemunhos</a>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button data-lang="pt" class="active">PT</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <a href="#contact" class="nav-cta" data-i18n="navCta">Pedir orçamento →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ---------- HERO ---------- -->
+<header class="hero" id="top">
+  <div class="container">
+    <div class="hero-text">
+      <div class="hero-eyebrow">
+        <span class="dot"></span>
+        <span data-i18n="heroEyebrow">Lisboa · Cascais · disponível 2026</span>
+      </div>
+      <h1 data-i18n="heroTitle">Pequenas <em>delícias</em><br/>para grandes <span class="hand">momentos</span></h1>
+      <p class="lead" data-i18n="heroLead">Mesas de doces, mini sobremesas e catering artesanal para casamentos, batizados, aniversários e eventos corporativos — feitos à mão, com ingredientes reais.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#contact" data-i18n="heroCtaQuote">Pedir orçamento</a>
+        <a class="btn btn-ghost" href="#gallery" data-i18n="heroCtaGallery">Ver trabalhos</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>+500</strong> <span data-i18n="metaEvents">eventos</span></div>
+        <div><strong>8k+</strong> <span data-i18n="metaFollowers">seguidores no IG</span></div>
+        <div><strong>★ 5.0</strong> <span data-i18n="metaRating">avaliação</span></div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5L18.2 22 12 17.4 5.8 22l2.4-8.1L2 9.4h7.6L12 2z"/></svg>
+        <span data-i18n="heroBadge">feito à mão</span>
+      </div>
+      <div class="hero-logo">
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="60" cy="60" r="58" fill="#f3e9d2" stroke="#2f5a5e" stroke-width="2.2"/>
+          <text x="60" y="58" text-anchor="middle" font-family="Dancing Script, cursive" font-size="34" font-weight="700" fill="#2f5a5e" font-style="italic">Delicias</text>
+          <text x="60" y="79" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#2f5a5e" letter-spacing="2">PEQUENINAS</text>
+          <g transform="translate(60 94)" fill="#2f5a5e">
+            <path d="M -10 -4 q 0 -3 2 -3 q 2 0 2 3 v 8 q 0 1 -1 1 q -1 0 -1 -1 v -3 q -1 0 -2 -1 q -1 -1 0 -4 z" transform="rotate(-20)"/>
+            <path d="M 10 -4 q 0 -3 -2 -3 q -2 0 -2 3 v 8 q 0 1 1 1 q 1 0 1 -1 v -3 q 1 0 2 -1 q 1 -1 0 -4 z" transform="rotate(20)"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---------- MARQUEE ---------- -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span><span data-i18n="mq1">Casamentos</span> <span class="dot">✦</span> <span data-i18n="mq2">Batizados</span> <span class="dot">✦</span> <span data-i18n="mq3">Aniversários</span> <span class="dot">✦</span> <span data-i18n="mq4">Eventos corporativos</span> <span class="dot">✦</span> <span data-i18n="mq5">Coffee breaks</span> <span class="dot">✦</span> <span data-i18n="mq6">Mesas de doces</span> <span class="dot">✦</span></span>
+    <span aria-hidden="true"><span data-i18n="mq1">Casamentos</span> <span class="dot">✦</span> <span data-i18n="mq2">Batizados</span> <span class="dot">✦</span> <span data-i18n="mq3">Aniversários</span> <span class="dot">✦</span> <span data-i18n="mq4">Eventos corporativos</span> <span class="dot">✦</span> <span data-i18n="mq5">Coffee breaks</span> <span class="dot">✦</span> <span data-i18n="mq6">Mesas de doces</span> <span class="dot">✦</span></span>
+  </div>
+</div>
+
+<!-- ---------- ABOUT ---------- -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo" aria-hidden="true"></div>
+      <div class="about-text">
+        <span class="eyebrow" data-i18n="aboutEyebrow">A nossa história</span>
+        <h2 data-i18n="aboutTitle">Doces com alma,<br/>memórias com sabor.</h2>
+        <p data-i18n="aboutP1">A Delícias Pequeninas nasceu da paixão por transformar momentos em memórias. Começámos na nossa cozinha, com receitas de família e vontade de partilhar.</p>
+        <p data-i18n="aboutP2">Hoje criamos mesas de doces, mini sobremesas e bolos artesanais para quem quer celebrar com um toque autêntico — sem atalhos, sem produtos industriais.</p>
+        <div class="about-stats">
+          <div class="stat"><div class="num">+500</div><div class="label" data-i18n="stat1">eventos doces</div></div>
+          <div class="stat"><div class="num">+40</div><div class="label" data-i18n="stat2">receitas autorais</div></div>
+          <div class="stat"><div class="num">100%</div><div class="label" data-i18n="stat3">feito à mão</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- SERVICES ---------- -->
+<section id="services" class="alt">
+  <div class="container">
+    <div class="services-head">
+      <div>
+        <span class="eyebrow" data-i18n="servicesEyebrow">Serviços</span>
+        <h2 data-i18n="servicesTitle">Feito à medida<br/>do seu evento.</h2>
+      </div>
+      <p data-i18n="servicesLead">Desde mesas completas a coffee breaks corporativos, cada proposta é desenhada em conjunto consigo.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service">
+        <span class="service-num">01</span>
+        <h3 data-i18n="svc1Title">Mesas de doces</h3>
+        <p data-i18n="svc1Desc">Composições completas com mini bolos, tartes, macarons e doces tradicionais, decoradas à medida.</p>
+        <span class="service-arrow">→</span>
+      </div>
+      <div class="service">
+        <span class="service-num">02</span>
+        <h3 data-i18n="svc2Title">Mini sobremesas</h3>
+        <p data-i18n="svc2Desc">Copinhos, verrines, cake pops e doces de colher — pequenas porções para provar de tudo.</p>
+        <span class="service-arrow">→</span>
+      </div>
+      <div class="service">
+        <span class="service-num">03</span>
+        <h3 data-i18n="svc3Title">Bolos artesanais</h3>
+        <p data-i18n="svc3Desc">Bolos de aniversário, casamento e batizado, personalizados em sabor, decoração e tamanho.</p>
+        <span class="service-arrow">→</span>
+      </div>
+      <div class="service">
+        <span class="service-num">04</span>
+        <h3 data-i18n="svc4Title">Lembranças doces</h3>
+        <p data-i18n="svc4Desc">Caixinhas de oferta, brownies, cookies e bombons para agradecer aos seus convidados.</p>
+        <span class="service-arrow">→</span>
+      </div>
+      <div class="service">
+        <span class="service-num">05</span>
+        <h3 data-i18n="svc5Title">Coffee breaks</h3>
+        <p data-i18n="svc5Desc">Pausas doces para empresas: mini salgados, quiches, scones e café para reuniões e workshops.</p>
+        <span class="service-arrow">→</span>
+      </div>
+      <div class="service">
+        <span class="service-num">06</span>
+        <h3 data-i18n="svc6Title">Eventos à medida</h3>
+        <p data-i18n="svc6Desc">Tem uma ideia diferente? Criamos propostas personalizadas para festas temáticas únicas.</p>
+        <span class="service-arrow">→</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- GALLERY ---------- -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="galleryEyebrow">Galeria</span>
+      <h2 data-i18n="galleryTitle">Um pouco do nosso trabalho.</h2>
+    </div>
+    <div class="gallery">
+      <div class="gallery-item g1" style="background-image: url('https://images.unsplash.com/photo-1535254973040-607b474cb50d?auto=format&fit=crop&w=1000&q=85');"></div>
+      <div class="gallery-item g2" style="background-image: url('https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=800&q=85');"></div>
+      <div class="gallery-item g3" style="background-image: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=85');"></div>
+      <div class="gallery-item g4" style="background-image: url('https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=800&q=85');"></div>
+      <div class="gallery-item g5" style="background-image: url('https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?auto=format&fit=crop&w=600&q=85');"></div>
+      <div class="gallery-item g6" style="background-image: url('https://images.unsplash.com/photo-1464195244916-405fa0a82545?auto=format&fit=crop&w=800&q=85');"></div>
+      <div class="gallery-item g7" style="background-image: url('https://images.unsplash.com/photo-1587736908577-cdd3ac63cc0e?auto=format&fit=crop&w=800&q=85');"></div>
+      <div class="gallery-item g8" style="background-image: url('https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=800&q=85');"></div>
+    </div>
+    <a class="ig-link" href="https://www.instagram.com/delicias.pequeninas/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      <span data-i18n="igCta">Veja mais em @delicias.pequeninas</span> →
+    </a>
+  </div>
+</section>
+
+<!-- ---------- TESTIMONIALS ---------- -->
+<section id="testimonials" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="testiEyebrow">Testemunhos</span>
+      <h2 data-i18n="testiTitle">Pequenos elogios,<br/>grandes sorrisos.</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p data-i18n="t1Text">"Os doces foram o destaque do nosso casamento. Trabalho impecável, do sabor à apresentação."</p>
+        <footer>Ana & Pedro<div class="event" data-i18n="t1Event">Casamento · Sintra</div></footer>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p data-i18n="t2Text">"A mesa de doces do batizado da nossa filha foi um sonho. Cuidado em cada detalhe."</p>
+        <footer>Sofia M.<div class="event" data-i18n="t2Event">Batizado · Cascais</div></footer>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p data-i18n="t3Text">"Profissionalismo, pontualidade e sobremesas deliciosas. A equipa ficou rendida."</p>
+        <footer>Ricardo L.<div class="event" data-i18n="t3Event">Evento corporativo · Lisboa</div></footer>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- CTA BANNER ---------- -->
+<section>
+  <div class="container">
+    <div class="cta-banner">
+      <span class="eyebrow" style="color: var(--bg);" data-i18n="bannerEyebrow">Pronto para adoçar o seu evento?</span>
+      <h2 style="margin-top: 1rem;" data-i18n="bannerTitle">Vamos criar algo <em>memorável</em>.</h2>
+      <p data-i18n="bannerLead">Conte-nos sobre o seu evento e preparamos uma proposta feita à sua medida. Respondemos em 24 horas.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" style="background: var(--bg); color: var(--ink);" href="#contact" data-i18n="bannerCta">Pedir orçamento</a>
+        <a class="btn btn-whatsapp" href="https://wa.me/351918520228?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20um%20or%C3%A7amento." target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          <span data-i18n="bannerWhats">WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- CONTACT ---------- -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <span class="eyebrow" data-i18n="contactEyebrow">Contactos</span>
+        <h2 data-i18n="contactTitle">Vamos <em>conversar</em>.</h2>
+        <div class="info-block">
+          <div class="info-label" data-i18n="infoPhone">Telefone / WhatsApp</div>
+          <a href="https://wa.me/351918520228" target="_blank" rel="noopener">+351 918 520 228</a>
+        </div>
+        <div class="info-block">
+          <div class="info-label" data-i18n="infoEmail">Email</div>
+          <a href="mailto:[EMAIL]">[EMAIL]</a>
+        </div>
+        <div class="info-block">
+          <div class="info-label" data-i18n="infoArea">Área de entrega</div>
+          <span data-i18n="infoAreaValue">Lisboa · Cascais · arredores</span>
+        </div>
+        <div class="info-block">
+          <div class="info-label" data-i18n="infoSocial">Redes sociais</div>
+          <a href="https://www.instagram.com/delicias.pequeninas/" target="_blank" rel="noopener">@delicias.pequeninas</a>
+        </div>
+        <div class="info-block">
+          <div class="info-label" data-i18n="infoHours">Horário</div>
+          <span data-i18n="infoHoursValue">Segunda a Sábado · 9h — 19h</span>
+        </div>
+      </div>
+      <form class="contact-form" id="quoteForm">
+        <div class="form-title" data-i18n="formTitle">Peça o seu orçamento</div>
+        <p class="form-sub" data-i18n="formSub">Preencha e respondemos em até 24 horas.</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name" data-i18n="formName">Nome</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email" data-i18n="formEmail">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone" data-i18n="formPhone">Telefone</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+          <div class="form-group">
+            <label for="eventType" data-i18n="formEventType">Tipo de evento</label>
+            <select id="eventType" name="eventType">
+              <option value="Casamento" data-i18n="formEvt1">Casamento</option>
+              <option value="Batizado" data-i18n="formEvt2">Batizado</option>
+              <option value="Aniversário" data-i18n="formEvt3">Aniversário</option>
+              <option value="Evento corporativo" data-i18n="formEvt4">Evento corporativo</option>
+              <option value="Outro" data-i18n="formEvt5">Outro</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="eventDate" data-i18n="formDate">Data do evento</label>
+            <input type="date" id="eventDate" name="eventDate" />
+          </div>
+          <div class="form-group">
+            <label for="guests" data-i18n="formGuests">Nº de convidados</label>
+            <input type="number" id="guests" name="guests" min="1" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message" data-i18n="formMsg">Conte-nos mais</label>
+          <textarea id="message" name="message" rows="4" data-i18n-ph="formMsgPh" placeholder="Sabores preferidos, estilo, inspirações..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;" data-i18n="formSubmit">Enviar pedido</button>
+        <div class="form-divider"><span data-i18n="formOr">ou</span></div>
+        <a class="btn btn-whatsapp" href="https://wa.me/351918520228?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20um%20or%C3%A7amento." target="_blank" rel="noopener" style="width:100%;justify-content:center;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448L.057 24z"/></svg>
+          <span data-i18n="formWhats">Pedir pelo WhatsApp</span>
+        </a>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- FOOTER ---------- -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand" style="color: var(--bg);">
+          <div class="brand-mark">
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="60" cy="60" r="58" fill="#f3e9d2" stroke="#2f5a5e" stroke-width="2.2"/>
+              <text x="60" y="58" text-anchor="middle" font-family="Dancing Script, cursive" font-size="34" font-weight="700" fill="#2f5a5e" font-style="italic">Delicias</text>
+              <text x="60" y="79" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#2f5a5e" letter-spacing="2">PEQUENINAS</text>
+              <g transform="translate(60 94)" fill="#2f5a5e">
+                <path d="M -10 -4 q 0 -3 2 -3 q 2 0 2 3 v 8 q 0 1 -1 1 q -1 0 -1 -1 v -3 q -1 0 -2 -1 q -1 -1 0 -4 z" transform="rotate(-20)"/>
+                <path d="M 10 -4 q 0 -3 -2 -3 q -2 0 -2 3 v 8 q 0 1 1 1 q 1 0 1 -1 v -3 q 1 0 2 -1 q 1 -1 0 -4 z" transform="rotate(20)"/>
+              </g>
+            </svg>
+          </div>
+          <div>
+            <div class="brand-name">Delícias Pequeninas</div>
+            <div class="brand-sub" data-i18n="brandSub">catering artesanal</div>
+          </div>
+        </div>
+        <p data-i18n="footerTagline">Catering artesanal para os seus momentos mais doces. Lisboa · Cascais · arredores.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footerNav">Navegar</h4>
+        <a href="#about" data-i18n="navAbout">Sobre</a>
+        <a href="#services" data-i18n="navServices">Serviços</a>
+        <a href="#gallery" data-i18n="navGallery">Galeria</a>
+        <a href="#contact" data-i18n="navContact">Contacto</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footerContact">Contacto</h4>
+        <a href="mailto:[EMAIL]">[EMAIL]</a>
+        <a href="https://wa.me/351918520228" target="_blank" rel="noopener">+351 918 520 228</a>
+        <a href="https://www.instagram.com/delicias.pequeninas/" target="_blank" rel="noopener">@delicias.pequeninas</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footerHours">Horário</h4>
+        <a data-i18n="footerHoursValue">Seg — Sáb · 9h — 19h</a>
+        <a data-i18n="footerClosed">Domingo encerrado</a>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>© <span id="year"></span> Delícias Pequeninas · <span data-i18n="footerRights">Todos os direitos reservados</span></span>
+      <span data-i18n="footerMade">Feito à mão, com carinho.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="fab-whatsapp" href="https://wa.me/351918520228" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+  const translations = {
+    pt: {
+      brandSub: "catering artesanal",
+      navAbout: "Sobre", navServices: "Serviços", navGallery: "Galeria",
+      navTestimonials: "Testemunhos", navContact: "Contacto", navCta: "Pedir orçamento →",
+
+      heroEyebrow: "Lisboa · Cascais · disponível 2026",
+      heroTitle: 'Pequenas <em>delícias</em><br/>para grandes <span class="hand">momentos</span>',
+      heroLead: "Mesas de doces, mini sobremesas e catering artesanal para casamentos, batizados, aniversários e eventos corporativos — feitos à mão, com ingredientes reais.",
+      heroCtaQuote: "Pedir orçamento",
+      heroCtaGallery: "Ver trabalhos",
+      heroBadge: "feito à mão",
+      metaEvents: "eventos", metaFollowers: "seguidores no IG", metaRating: "avaliação",
+
+      mq1: "Casamentos", mq2: "Batizados", mq3: "Aniversários",
+      mq4: "Eventos corporativos", mq5: "Coffee breaks", mq6: "Mesas de doces",
+
+      aboutEyebrow: "A nossa história",
+      aboutTitle: "Doces com alma,<br/>memórias com sabor.",
+      aboutP1: "A Delícias Pequeninas nasceu da paixão por transformar momentos em memórias. Começámos na nossa cozinha, com receitas de família e vontade de partilhar.",
+      aboutP2: "Hoje criamos mesas de doces, mini sobremesas e bolos artesanais para quem quer celebrar com um toque autêntico — sem atalhos, sem produtos industriais.",
+      stat1: "eventos doces", stat2: "receitas autorais", stat3: "feito à mão",
+
+      servicesEyebrow: "Serviços",
+      servicesTitle: "Feito à medida<br/>do seu evento.",
+      servicesLead: "Desde mesas completas a coffee breaks corporativos, cada proposta é desenhada em conjunto consigo.",
+      svc1Title: "Mesas de doces", svc1Desc: "Composições completas com mini bolos, tartes, macarons e doces tradicionais, decoradas à medida.",
+      svc2Title: "Mini sobremesas", svc2Desc: "Copinhos, verrines, cake pops e doces de colher — pequenas porções para provar de tudo.",
+      svc3Title: "Bolos artesanais", svc3Desc: "Bolos de aniversário, casamento e batizado, personalizados em sabor, decoração e tamanho.",
+      svc4Title: "Lembranças doces", svc4Desc: "Caixinhas de oferta, brownies, cookies e bombons para agradecer aos seus convidados.",
+      svc5Title: "Coffee breaks", svc5Desc: "Pausas doces para empresas: mini salgados, quiches, scones e café para reuniões e workshops.",
+      svc6Title: "Eventos à medida", svc6Desc: "Tem uma ideia diferente? Criamos propostas personalizadas para festas temáticas únicas.",
+
+      galleryEyebrow: "Galeria",
+      galleryTitle: "Um pouco do nosso trabalho.",
+      igCta: "Veja mais em @delicias.pequeninas",
+
+      testiEyebrow: "Testemunhos",
+      testiTitle: "Pequenos elogios,<br/>grandes sorrisos.",
+      t1Text: '"Os doces foram o destaque do nosso casamento. Trabalho impecável, do sabor à apresentação."',
+      t1Event: "Casamento · Sintra",
+      t2Text: '"A mesa de doces do batizado da nossa filha foi um sonho. Cuidado em cada detalhe."',
+      t2Event: "Batizado · Cascais",
+      t3Text: '"Profissionalismo, pontualidade e sobremesas deliciosas. A equipa ficou rendida."',
+      t3Event: "Evento corporativo · Lisboa",
+
+      bannerEyebrow: "Pronto para adoçar o seu evento?",
+      bannerTitle: "Vamos criar algo <em>memorável</em>.",
+      bannerLead: "Conte-nos sobre o seu evento e preparamos uma proposta feita à sua medida. Respondemos em 24 horas.",
+      bannerCta: "Pedir orçamento", bannerWhats: "WhatsApp",
+
+      contactEyebrow: "Contactos",
+      contactTitle: "Vamos <em>conversar</em>.",
+      infoEmail: "Email", infoPhone: "Telefone / WhatsApp", infoArea: "Área de entrega",
+      infoAreaValue: "Lisboa · Cascais · arredores",
+      infoSocial: "Redes sociais", infoHours: "Horário", infoHoursValue: "Segunda a Sábado · 9h — 19h",
+
+      formTitle: "Peça o seu orçamento",
+      formSub: "Preencha e respondemos em até 24 horas.",
+      formName: "Nome", formEmail: "Email", formPhone: "Telefone", formEventType: "Tipo de evento",
+      formEvt1: "Casamento", formEvt2: "Batizado", formEvt3: "Aniversário",
+      formEvt4: "Evento corporativo", formEvt5: "Outro",
+      formDate: "Data do evento", formGuests: "Nº de convidados",
+      formMsg: "Conte-nos mais", formMsgPh: "Sabores preferidos, estilo, inspirações...",
+      formSubmit: "Enviar pedido", formOr: "ou", formWhats: "Pedir pelo WhatsApp",
+
+      footerNav: "Navegar", footerContact: "Contacto", footerHours: "Horário",
+      footerHoursValue: "Seg — Sáb · 9h — 19h", footerClosed: "Domingo encerrado",
+      footerTagline: "Catering artesanal para os seus momentos mais doces. Lisboa · Cascais · arredores.",
+      footerRights: "Todos os direitos reservados", footerMade: "Feito à mão, com carinho.",
+    },
+    en: {
+      brandSub: "artisanal catering",
+      navAbout: "About", navServices: "Services", navGallery: "Gallery",
+      navTestimonials: "Reviews", navContact: "Contact", navCta: "Request a quote →",
+
+      heroEyebrow: "Lisbon · Cascais · booking 2026",
+      heroTitle: 'Little <em>delights</em><br/>for big <span class="hand">moments</span>',
+      heroLead: "Dessert tables, mini sweets and artisanal catering for weddings, christenings, birthdays and corporate events — handmade, with real ingredients.",
+      heroCtaQuote: "Request a quote",
+      heroCtaGallery: "View work",
+      heroBadge: "handmade",
+      metaEvents: "events", metaFollowers: "IG followers", metaRating: "rating",
+
+      mq1: "Weddings", mq2: "Christenings", mq3: "Birthdays",
+      mq4: "Corporate events", mq5: "Coffee breaks", mq6: "Dessert tables",
+
+      aboutEyebrow: "Our story",
+      aboutTitle: "Sweets with soul,<br/>memories with flavor.",
+      aboutP1: "Delícias Pequeninas was born from a passion for turning moments into memories. We started in our own kitchen, with family recipes and a wish to share them.",
+      aboutP2: "Today we craft dessert tables, mini sweets and artisanal cakes for anyone who wants to celebrate with an authentic touch — no shortcuts, no industrial products.",
+      stat1: "sweet events", stat2: "signature recipes", stat3: "handmade",
+
+      servicesEyebrow: "Services",
+      servicesTitle: "Made to measure<br/>for your event.",
+      servicesLead: "From full dessert tables to corporate coffee breaks, every proposal is designed with you.",
+      svc1Title: "Dessert tables", svc1Desc: "Full spreads with mini cakes, tarts, macarons and traditional sweets, styled to match your event.",
+      svc2Title: "Mini sweets", svc2Desc: "Verrines, cake pops and dessert cups — bite-sized portions to try a bit of everything.",
+      svc3Title: "Artisanal cakes", svc3Desc: "Birthday, wedding and christening cakes, personalized in flavor, decoration and size.",
+      svc4Title: "Sweet favors", svc4Desc: "Gift boxes, brownies, cookies and bonbons to thank your guests.",
+      svc5Title: "Coffee breaks", svc5Desc: "Sweet breaks for companies: mini savories, quiches, scones and coffee for meetings and workshops.",
+      svc6Title: "Bespoke events", svc6Desc: "Have a different idea? We create custom proposals for unique themed parties.",
+
+      galleryEyebrow: "Gallery",
+      galleryTitle: "A taste of our work.",
+      igCta: "See more at @delicias.pequeninas",
+
+      testiEyebrow: "Reviews",
+      testiTitle: "Little compliments,<br/>big smiles.",
+      t1Text: '"The sweets were the highlight of our wedding. Flawless work, from flavor to presentation."',
+      t1Event: "Wedding · Sintra",
+      t2Text: '"Our daughter\'s christening dessert table was a dream. Every detail cared for."',
+      t2Event: "Christening · Cascais",
+      t3Text: '"Professional, on time, and delicious desserts. The team was blown away."',
+      t3Event: "Corporate event · Lisbon",
+
+      bannerEyebrow: "Ready to sweeten your event?",
+      bannerTitle: "Let's create something <em>memorable</em>.",
+      bannerLead: "Tell us about your event and we'll craft a proposal made just for you. We reply within 24 hours.",
+      bannerCta: "Request a quote", bannerWhats: "WhatsApp",
+
+      contactEyebrow: "Contact",
+      contactTitle: "Let's <em>talk</em>.",
+      infoEmail: "Email", infoPhone: "Phone / WhatsApp", infoArea: "Delivery area",
+      infoAreaValue: "Lisbon · Cascais · surroundings",
+      infoSocial: "Social media", infoHours: "Hours", infoHoursValue: "Monday to Saturday · 9am — 7pm",
+
+      formTitle: "Request your quote",
+      formSub: "Fill in and we'll reply within 24 hours.",
+      formName: "Name", formEmail: "Email", formPhone: "Phone", formEventType: "Event type",
+      formEvt1: "Wedding", formEvt2: "Christening", formEvt3: "Birthday",
+      formEvt4: "Corporate event", formEvt5: "Other",
+      formDate: "Event date", formGuests: "# of guests",
+      formMsg: "Tell us more", formMsgPh: "Favorite flavors, style, inspirations...",
+      formSubmit: "Send request", formOr: "or", formWhats: "Request via WhatsApp",
+
+      footerNav: "Navigate", footerContact: "Contact", footerHours: "Hours",
+      footerHoursValue: "Mon — Sat · 9am — 7pm", footerClosed: "Closed Sunday",
+      footerTagline: "Artisanal catering for your sweetest moments. Lisbon · Cascais · surroundings.",
+      footerRights: "All rights reserved", footerMade: "Handmade, with love.",
+    }
+  };
+
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    const dict = translations[lang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+    document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+      const key = el.getAttribute('data-i18n-ph');
+      if (dict[key] !== undefined) el.placeholder = dict[key];
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+  }
+
+  document.querySelectorAll('.lang-toggle button').forEach(btn => {
+    btn.addEventListener('click', () => setLang(btn.dataset.lang));
+  });
+
+  // Portuguese is always the default — users can switch to EN via the toggle
+  setLang('pt');
+
+  document.getElementById('navToggle').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+  document.querySelectorAll('#navLinks a').forEach(a =>
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'))
+  );
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  document.getElementById('quoteForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const lang = document.documentElement.lang;
+    const f = e.target;
+    const get = (n) => f.elements[n].value.trim();
+
+    const subject = lang === 'en'
+      ? `Quote request — ${get('eventType') || 'event'}`
+      : `Pedido de orçamento — ${get('eventType') || 'evento'}`;
+
+    const lines = lang === 'en' ? [
+      `Name: ${get('name')}`,
+      `Email: ${get('email')}`,
+      `Phone: ${get('phone')}`,
+      `Event type: ${get('eventType')}`,
+      `Date: ${get('eventDate')}`,
+      `Guests: ${get('guests')}`,
+      ``,
+      `Message:`,
+      get('message') || '—'
+    ] : [
+      `Nome: ${get('name')}`,
+      `Email: ${get('email')}`,
+      `Telefone: ${get('phone')}`,
+      `Tipo de evento: ${get('eventType')}`,
+      `Data: ${get('eventDate')}`,
+      `Nº de convidados: ${get('guests')}`,
+      ``,
+      `Mensagem:`,
+      get('message') || '—'
+    ];
+
+    const body = encodeURIComponent(lines.join('\n'));
+    const subj = encodeURIComponent(subject);
+    window.location.href = `mailto:[EMAIL]?subject=${subj}&body=${body}`;
+  });
+</script>
+
+</body>
+</html>
