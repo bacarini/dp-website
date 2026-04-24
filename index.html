@@ -161,12 +161,13 @@
     color: var(--bg);
   }
 
+  .nav-links a.nav-cta,
   .nav-cta {
     display: inline-flex;
     align-items: center;
     gap: .5rem;
     background: var(--ink);
-    color: var(--bg);
+    color: var(--paper);
     padding: .7rem 1.35rem;
     border-radius: 999px;
     text-decoration: none;
@@ -177,7 +178,8 @@
     letter-spacing: -0.005em;
     transition: background .2s, transform .15s;
   }
-  .nav-cta:hover { background: var(--accent); transform: translateY(-1px); }
+  .nav-links a.nav-cta:hover,
+  .nav-cta:hover { background: var(--accent); color: var(--paper); transform: translateY(-1px); }
 
   .nav-toggle {
     display: none;
@@ -290,7 +292,7 @@
     aspect-ratio: 4 / 5;
     border-radius: var(--radius-lg);
     overflow: hidden;
-    background-image: url('https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=1200&q=85');
+    background-image: url('photos/photo3.jpeg');
     background-size: cover;
     background-position: center;
     box-shadow: var(--shadow);
@@ -381,7 +383,7 @@
   .about-photo {
     aspect-ratio: 4 / 5;
     border-radius: var(--radius-lg);
-    background-image: url('https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=900&q=85');
+    background-image: url('photos/photo1.jpeg');
     background-size: cover;
     background-position: center;
     box-shadow: var(--shadow);
@@ -481,14 +483,11 @@
     transition: opacity .3s;
   }
   .gallery-item:hover::after { opacity: 1; }
-  .g1 { grid-column: span 5; grid-row: span 2; min-height: 460px; }
+  .g1 { grid-column: span 5; grid-row: span 2; min-height: 480px; }
   .g2 { grid-column: span 4; }
   .g3 { grid-column: span 3; }
   .g4 { grid-column: span 4; }
   .g5 { grid-column: span 3; }
-  .g6 { grid-column: span 4; }
-  .g7 { grid-column: span 4; }
-  .g8 { grid-column: span 4; }
 
   .ig-link {
     display: inline-flex;
@@ -734,8 +733,8 @@
     .services-grid { grid-template-columns: 1fr; }
     .testimonials-grid { grid-template-columns: 1fr; }
     .gallery { grid-template-columns: repeat(6, 1fr); }
-    .g1 { grid-column: span 6; min-height: 320px; }
-    .g2, .g4, .g6, .g7, .g8 { grid-column: span 3; }
+    .g1 { grid-column: span 6; min-height: 320px; grid-row: auto; }
+    .g2, .g4 { grid-column: span 3; }
     .g3, .g5 { grid-column: span 3; }
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
     .form-row { grid-template-columns: 1fr; }
@@ -914,14 +913,11 @@
       <h2 data-i18n="galleryTitle">Um pouco do nosso trabalho.</h2>
     </div>
     <div class="gallery">
-      <div class="gallery-item g1" style="background-image: url('https://images.unsplash.com/photo-1535254973040-607b474cb50d?auto=format&fit=crop&w=1000&q=85');"></div>
-      <div class="gallery-item g2" style="background-image: url('https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=800&q=85');"></div>
-      <div class="gallery-item g3" style="background-image: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=85');"></div>
-      <div class="gallery-item g4" style="background-image: url('https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=800&q=85');"></div>
-      <div class="gallery-item g5" style="background-image: url('https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?auto=format&fit=crop&w=600&q=85');"></div>
-      <div class="gallery-item g6" style="background-image: url('https://images.unsplash.com/photo-1464195244916-405fa0a82545?auto=format&fit=crop&w=800&q=85');"></div>
-      <div class="gallery-item g7" style="background-image: url('https://images.unsplash.com/photo-1587736908577-cdd3ac63cc0e?auto=format&fit=crop&w=800&q=85');"></div>
-      <div class="gallery-item g8" style="background-image: url('https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=800&q=85');"></div>
+      <div class="gallery-item g1" style="background-image: url('photos/photo2.jpeg');"></div>
+      <div class="gallery-item g2" style="background-image: url('photos/photo4.jpeg');"></div>
+      <div class="gallery-item g3" style="background-image: url('photos/photo15.jpeg');"></div>
+      <div class="gallery-item g4" style="background-image: url('photos/photo3.jpeg');"></div>
+      <div class="gallery-item g5" style="background-image: url('photos/photo1.jpeg');"></div>
     </div>
     <a class="ig-link" href="https://www.instagram.com/delicias.pequeninas/" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
