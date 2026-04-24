@@ -286,12 +286,18 @@
     color: var(--muted);
   }
   .hero-meta strong { color: var(--ink); font-weight: 500; }
+  .hero-region {
+    margin-top: 2rem;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink-2);
+  }
 
   .hero-visual {
     position: relative;
     aspect-ratio: 4 / 5;
     border-radius: var(--radius-lg);
-    overflow: hidden;
     background-image: url('photos/photo3.jpeg');
     background-size: cover;
     background-position: center;
@@ -301,7 +307,9 @@
     content: '';
     position: absolute;
     inset: 0;
+    border-radius: var(--radius-lg);
     background: linear-gradient(180deg, transparent 60%, rgba(26,23,20,.25));
+    pointer-events: none;
   }
   .hero-logo {
     position: absolute;
@@ -792,19 +800,15 @@
     <div class="hero-text">
       <div class="hero-eyebrow">
         <span class="dot"></span>
-        <span data-i18n="heroEyebrow">Lisboa · Cascais · disponível 2026</span>
+        <span data-i18n="heroEyebrow">Catering artesanal · finger food</span>
       </div>
-      <h1 data-i18n="heroTitle">Pequenas <em>delícias</em><br/>para grandes <span class="hand">momentos</span></h1>
-      <p class="lead" data-i18n="heroLead">Mesas de doces, mini sobremesas e catering artesanal para casamentos, batizados, aniversários e eventos corporativos — feitos à mão, com ingredientes reais.</p>
+      <h1 data-i18n="heroTitle">Delícias <em>pequeninas</em>,<br/>grandes <span class="hand">comemorações</span>.</h1>
+      <p class="lead" data-i18n="heroLead">Cada evento tem a sua história — e é a partir dela que começamos. O nosso serviço de catering artesanal em estilo finger food une o equilíbrio dos sabores à escolha criteriosa de ingredientes frescos. Casamentos, batizados, aniversários e eventos corporativos transformam-se em experiências que se sentem e que ficam na memória.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#contact" data-i18n="heroCtaQuote">Pedir orçamento</a>
         <a class="btn btn-ghost" href="#gallery" data-i18n="heroCtaGallery">Ver trabalhos</a>
       </div>
-      <div class="hero-meta">
-        <div><strong>+500</strong> <span data-i18n="metaEvents">eventos</span></div>
-        <div><strong>8k+</strong> <span data-i18n="metaFollowers">seguidores no IG</span></div>
-        <div><strong>★ 5.0</strong> <span data-i18n="metaRating">avaliação</span></div>
-      </div>
+      <p class="hero-region" data-i18n="heroRegion">Atendemos Lisboa e região.</p>
     </div>
     <div class="hero-visual" aria-hidden="true">
       <div class="hero-badge">
@@ -841,13 +845,13 @@
       <div class="about-photo" aria-hidden="true"></div>
       <div class="about-text">
         <span class="eyebrow" data-i18n="aboutEyebrow">A nossa história</span>
-        <h2 data-i18n="aboutTitle">Doces com alma,<br/>memórias com sabor.</h2>
-        <p data-i18n="aboutP1">A Delícias Pequeninas nasceu da paixão por transformar momentos em memórias. Começámos na nossa cozinha, com receitas de família e vontade de partilhar.</p>
-        <p data-i18n="aboutP2">Hoje criamos mesas de doces, mini sobremesas e bolos artesanais para quem quer celebrar com um toque autêntico — sem atalhos, sem produtos industriais.</p>
+        <h2 data-i18n="aboutTitle">Mesas com alma,<br/>memórias com sabor.</h2>
+        <p data-i18n="aboutP1">A Delícias Pequeninas nasceu da paixão por transformar momentos em lembranças que ficam. Começámos na nossa cozinha, reunindo receitas de família, uma apresentação encantadora e a vontade de partilhar a nossa visão: a de que todo o evento pode tornar-se inesquecível através da beleza de uma mesa pensada para alegrar os olhos e encantar o paladar.</p>
+        <p data-i18n="aboutP2">Criamos composições memoráveis com salgados, sandes, mini saladas, tábuas de queijos e enchidos, frutas, doces e mini-sobremesas — para quem quer celebrar com um toque autêntico e surpreendente.</p>
         <div class="about-stats">
-          <div class="stat"><div class="num">+500</div><div class="label" data-i18n="stat1">eventos doces</div></div>
-          <div class="stat"><div class="num">+40</div><div class="label" data-i18n="stat2">receitas autorais</div></div>
-          <div class="stat"><div class="num">100%</div><div class="label" data-i18n="stat3">feito à mão</div></div>
+          <div class="stat"><div class="num">+500</div><div class="label" data-i18n="stat1">eventos</div></div>
+          <div class="stat"><div class="num">+30</div><div class="label" data-i18n="stat2">opções de menu</div></div>
+          <div class="stat"><div class="num">+4</div><div class="label" data-i18n="stat3">anos de experiência</div></div>
         </div>
       </div>
     </div>
@@ -860,45 +864,27 @@
     <div class="services-head">
       <div>
         <span class="eyebrow" data-i18n="servicesEyebrow">Serviços</span>
-        <h2 data-i18n="servicesTitle">Feito à medida<br/>do seu evento.</h2>
+        <h2 data-i18n="servicesTitle">Cada evento,<br/>uma <em>criação</em> única.</h2>
       </div>
-      <p data-i18n="servicesLead">Desde mesas completas a coffee breaks corporativos, cada proposta é desenhada em conjunto consigo.</p>
+      <p data-i18n="servicesLead">Do início ao fim, cuidamos de cada detalhe — para que se possa focar apenas em celebrar.</p>
     </div>
     <div class="services-grid">
       <div class="service">
         <span class="service-num">01</span>
-        <h3 data-i18n="svc1Title">Mesas de doces</h3>
-        <p data-i18n="svc1Desc">Composições completas com mini bolos, tartes, macarons e doces tradicionais, decoradas à medida.</p>
+        <h3 data-i18n="svc1Title">Produção e montagem</h3>
+        <p data-i18n="svc1Desc">Além de realizar a produção sempre fresquinha das nossas delícias, deslocamo-nos ao local do seu evento e deixamos tudo pronto — arrumado e perfeito para que os convidados se encantem. Das loiças aos sabores, cada detalhe é pensado para surpreender.</p>
         <span class="service-arrow">→</span>
       </div>
       <div class="service">
         <span class="service-num">02</span>
-        <h3 data-i18n="svc2Title">Mini sobremesas</h3>
-        <p data-i18n="svc2Desc">Copinhos, verrines, cake pops e doces de colher — pequenas porções para provar de tudo.</p>
+        <h3 data-i18n="svc2Title">Retirada</h3>
+        <p data-i18n="svc2Desc">Caso prefira, o seu pedido pode ser levantado, embalado com todo o cuidado, na nossa sede em Cascais.</p>
         <span class="service-arrow">→</span>
       </div>
       <div class="service">
         <span class="service-num">03</span>
-        <h3 data-i18n="svc3Title">Bolos artesanais</h3>
-        <p data-i18n="svc3Desc">Bolos de aniversário, casamento e batizado, personalizados em sabor, decoração e tamanho.</p>
-        <span class="service-arrow">→</span>
-      </div>
-      <div class="service">
-        <span class="service-num">04</span>
-        <h3 data-i18n="svc4Title">Lembranças doces</h3>
-        <p data-i18n="svc4Desc">Caixinhas de oferta, brownies, cookies e bombons para agradecer aos seus convidados.</p>
-        <span class="service-arrow">→</span>
-      </div>
-      <div class="service">
-        <span class="service-num">05</span>
-        <h3 data-i18n="svc5Title">Coffee breaks</h3>
-        <p data-i18n="svc5Desc">Pausas doces para empresas: mini salgados, quiches, scones e café para reuniões e workshops.</p>
-        <span class="service-arrow">→</span>
-      </div>
-      <div class="service">
-        <span class="service-num">06</span>
-        <h3 data-i18n="svc6Title">Eventos à medida</h3>
-        <p data-i18n="svc6Desc">Tem uma ideia diferente? Criamos propostas personalizadas para festas temáticas únicas.</p>
+        <h3 data-i18n="svc3Title">Personalização</h3>
+        <p data-i18n="svc3Desc">Tem uma ideia diferente? De canapés a brunches, criamos consigo os sabores que serão a essência do seu próximo evento.</p>
         <span class="service-arrow">→</span>
       </div>
     </div>
@@ -1114,32 +1100,29 @@
       navAbout: "Sobre", navServices: "Serviços", navGallery: "Galeria",
       navTestimonials: "Testemunhos", navContact: "Contacto", navCta: "Pedir orçamento →",
 
-      heroEyebrow: "Lisboa · Cascais · disponível 2026",
-      heroTitle: 'Pequenas <em>delícias</em><br/>para grandes <span class="hand">momentos</span>',
-      heroLead: "Mesas de doces, mini sobremesas e catering artesanal para casamentos, batizados, aniversários e eventos corporativos — feitos à mão, com ingredientes reais.",
+      heroEyebrow: "Catering artesanal · finger food",
+      heroTitle: 'Delícias <em>pequeninas</em>,<br/>grandes <span class="hand">comemorações</span>.',
+      heroLead: "Cada evento tem a sua história — e é a partir dela que começamos. O nosso serviço de catering artesanal em estilo finger food une o equilíbrio dos sabores à escolha criteriosa de ingredientes frescos. Casamentos, batizados, aniversários e eventos corporativos transformam-se em experiências que se sentem e que ficam na memória.",
+      heroRegion: "Atendemos Lisboa e região.",
       heroCtaQuote: "Pedir orçamento",
       heroCtaGallery: "Ver trabalhos",
       heroBadge: "feito à mão",
-      metaEvents: "eventos", metaFollowers: "seguidores no IG", metaRating: "avaliação",
 
       mq1: "Casamentos", mq2: "Batizados", mq3: "Aniversários",
       mq4: "Eventos corporativos", mq5: "Coffee breaks", mq6: "Mesas de doces",
 
       aboutEyebrow: "A nossa história",
-      aboutTitle: "Doces com alma,<br/>memórias com sabor.",
-      aboutP1: "A Delícias Pequeninas nasceu da paixão por transformar momentos em memórias. Começámos na nossa cozinha, com receitas de família e vontade de partilhar.",
-      aboutP2: "Hoje criamos mesas de doces, mini sobremesas e bolos artesanais para quem quer celebrar com um toque autêntico — sem atalhos, sem produtos industriais.",
-      stat1: "eventos doces", stat2: "receitas autorais", stat3: "feito à mão",
+      aboutTitle: "Mesas com alma,<br/>memórias com sabor.",
+      aboutP1: "A Delícias Pequeninas nasceu da paixão por transformar momentos em lembranças que ficam. Começámos na nossa cozinha, reunindo receitas de família, uma apresentação encantadora e a vontade de partilhar a nossa visão: a de que todo o evento pode tornar-se inesquecível através da beleza de uma mesa pensada para alegrar os olhos e encantar o paladar.",
+      aboutP2: "Criamos composições memoráveis com salgados, sandes, mini saladas, tábuas de queijos e enchidos, frutas, doces e mini-sobremesas — para quem quer celebrar com um toque autêntico e surpreendente.",
+      stat1: "eventos", stat2: "opções de menu", stat3: "anos de experiência",
 
       servicesEyebrow: "Serviços",
-      servicesTitle: "Feito à medida<br/>do seu evento.",
-      servicesLead: "Desde mesas completas a coffee breaks corporativos, cada proposta é desenhada em conjunto consigo.",
-      svc1Title: "Mesas de doces", svc1Desc: "Composições completas com mini bolos, tartes, macarons e doces tradicionais, decoradas à medida.",
-      svc2Title: "Mini sobremesas", svc2Desc: "Copinhos, verrines, cake pops e doces de colher — pequenas porções para provar de tudo.",
-      svc3Title: "Bolos artesanais", svc3Desc: "Bolos de aniversário, casamento e batizado, personalizados em sabor, decoração e tamanho.",
-      svc4Title: "Lembranças doces", svc4Desc: "Caixinhas de oferta, brownies, cookies e bombons para agradecer aos seus convidados.",
-      svc5Title: "Coffee breaks", svc5Desc: "Pausas doces para empresas: mini salgados, quiches, scones e café para reuniões e workshops.",
-      svc6Title: "Eventos à medida", svc6Desc: "Tem uma ideia diferente? Criamos propostas personalizadas para festas temáticas únicas.",
+      servicesTitle: "Cada evento,<br/>uma <em>criação</em> única.",
+      servicesLead: "Do início ao fim, cuidamos de cada detalhe — para que se possa focar apenas em celebrar.",
+      svc1Title: "Produção e montagem", svc1Desc: "Além de realizar a produção sempre fresquinha das nossas delícias, deslocamo-nos ao local do seu evento e deixamos tudo pronto — arrumado e perfeito para que os convidados se encantem. Das loiças aos sabores, cada detalhe é pensado para surpreender.",
+      svc2Title: "Retirada", svc2Desc: "Caso prefira, o seu pedido pode ser levantado, embalado com todo o cuidado, na nossa sede em Cascais.",
+      svc3Title: "Personalização", svc3Desc: "Tem uma ideia diferente? De canapés a brunches, criamos consigo os sabores que serão a essência do seu próximo evento.",
 
       galleryEyebrow: "Galeria",
       galleryTitle: "Um pouco do nosso trabalho.",
@@ -1184,32 +1167,29 @@
       navAbout: "About", navServices: "Services", navGallery: "Gallery",
       navTestimonials: "Reviews", navContact: "Contact", navCta: "Request a quote →",
 
-      heroEyebrow: "Lisbon · Cascais · booking 2026",
-      heroTitle: 'Little <em>delights</em><br/>for big <span class="hand">moments</span>',
-      heroLead: "Dessert tables, mini sweets and artisanal catering for weddings, christenings, birthdays and corporate events — handmade, with real ingredients.",
+      heroEyebrow: "Artisanal catering · finger food",
+      heroTitle: 'Little <em>delights</em>,<br/>grand <span class="hand">celebrations</span>.',
+      heroLead: "Every event has a story — and that's where we begin. Our artisanal finger-food catering brings together balanced flavors and carefully chosen fresh ingredients. Weddings, christenings, birthdays and corporate events become experiences you can feel — the kind that stay with you.",
+      heroRegion: "Serving Lisbon and surrounding area.",
       heroCtaQuote: "Request a quote",
       heroCtaGallery: "View work",
       heroBadge: "handmade",
-      metaEvents: "events", metaFollowers: "IG followers", metaRating: "rating",
 
       mq1: "Weddings", mq2: "Christenings", mq3: "Birthdays",
       mq4: "Corporate events", mq5: "Coffee breaks", mq6: "Dessert tables",
 
       aboutEyebrow: "Our story",
-      aboutTitle: "Sweets with soul,<br/>memories with flavor.",
-      aboutP1: "Delícias Pequeninas was born from a passion for turning moments into memories. We started in our own kitchen, with family recipes and a wish to share them.",
-      aboutP2: "Today we craft dessert tables, mini sweets and artisanal cakes for anyone who wants to celebrate with an authentic touch — no shortcuts, no industrial products.",
-      stat1: "sweet events", stat2: "signature recipes", stat3: "handmade",
+      aboutTitle: "Tables with soul,<br/>memories with flavor.",
+      aboutP1: "Delícias Pequeninas was born from a passion for turning moments into memories that last. We started in our own kitchen, gathering family recipes, a captivating presentation, and a desire to share our belief: that every event can become unforgettable through the beauty of a table designed to delight the eyes and charm the palate.",
+      aboutP2: "We craft memorable spreads with savories, sandwiches, mini salads, cheese and charcuterie boards, fruit, sweets and mini desserts — for anyone who wants to celebrate with an authentic, surprising touch.",
+      stat1: "events", stat2: "menu options", stat3: "years of experience",
 
       servicesEyebrow: "Services",
-      servicesTitle: "Made to measure<br/>for your event.",
-      servicesLead: "From full dessert tables to corporate coffee breaks, every proposal is designed with you.",
-      svc1Title: "Dessert tables", svc1Desc: "Full spreads with mini cakes, tarts, macarons and traditional sweets, styled to match your event.",
-      svc2Title: "Mini sweets", svc2Desc: "Verrines, cake pops and dessert cups — bite-sized portions to try a bit of everything.",
-      svc3Title: "Artisanal cakes", svc3Desc: "Birthday, wedding and christening cakes, personalized in flavor, decoration and size.",
-      svc4Title: "Sweet favors", svc4Desc: "Gift boxes, brownies, cookies and bonbons to thank your guests.",
-      svc5Title: "Coffee breaks", svc5Desc: "Sweet breaks for companies: mini savories, quiches, scones and coffee for meetings and workshops.",
-      svc6Title: "Bespoke events", svc6Desc: "Have a different idea? We create custom proposals for unique themed parties.",
+      servicesTitle: "Every event,<br/>a <em>unique</em> creation.",
+      servicesLead: "From start to finish, we take care of every detail — so you can focus only on celebrating.",
+      svc1Title: "Production & set-up", svc1Desc: "Beyond preparing every bite fresh, we travel to your venue and set everything up — arranged and perfect, ready to delight your guests. From tableware to flavors, every detail is designed to surprise.",
+      svc2Title: "Pick-up", svc2Desc: "Prefer to collect? Your order can be carefully packaged and picked up at our kitchen in Cascais.",
+      svc3Title: "Personalization", svc3Desc: "Have a different idea? From canapés to brunches, we'll craft together the flavors that will be the essence of your next event.",
 
       galleryEyebrow: "Gallery",
       galleryTitle: "A taste of our work.",
